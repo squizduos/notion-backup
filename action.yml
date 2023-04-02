@@ -1,4 +1,4 @@
-name: "Notion Exporter"
+name: "Notion backup"
 description: "The action allows you to export the content of your notion.so pages&databases as markdown, to a github repo."
 branding:
   icon: external-link
