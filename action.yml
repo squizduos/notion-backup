@@ -1,0 +1,35 @@
+name: "Notion Exporter"
+description: "The action allows you to export the content of your notion.so pages&databases as markdown, to a github repo."
+branding:
+  icon: external-link
+  color: white
+inputs:
+    pages:
+      description: "Comma-separated list of page to export the data from"
+      required: true
+    github-token:
+      description: "Github token to use to commit to the repo"
+      required: true
+    notion-token:
+      description: "Value of the token_v2 cookie"
+      required: true
+    output-dir:
+        description: "Directory under your repo to sync the data to; note the existing files will be deleted"
+        required: true
+    force-branch:
+        description: "Override the branch to use, defaults to the branch you run your workflow on"
+        required: false
+    notion-file-token:
+        description: "Value of the notion_file_token cookie"
+        required: true
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    GITHUB_TOKEN: "${{ inputs.github-token }}"
+    NOTION_TOKEN: "${{ inputs.notion-token }}"
+    NOTION_FILE_TOKEN: "${{ inputs.notion-file-token }}"
+    FORCE_BRANCH: "${{ inputs.force-branch }}"
+  args:
+    - "${{ inputs.pages }}"
+    - "${{ inputs.output-dir }}"
