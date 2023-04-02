@@ -42,5 +42,5 @@ jobs:
           output-dir: notion-backup
           notion-token: ${{ secrets.NOTION_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
+          notion-file-token: ${{ secrets.NOTION_FILE_TOKEN }}
 ```
