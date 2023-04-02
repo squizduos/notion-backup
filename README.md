@@ -36,7 +36,7 @@ jobs:
   export:
     runs-on: ubuntu-latest
     steps:
-      - uses: AsahiMoon/notion-exporter@v1.0.0
+      - uses: AsahiMoon/notion-backup@v1.0.0
         with:
           pages: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"  # Pages IDs identified in (step 2)  
           output-dir: notion-backup
