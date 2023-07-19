@@ -45,3 +45,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           notion-file-token: ${{ secrets.NOTION_FILE_TOKEN }}
 ```
+
+## issue
+1. 使用git时提示无法访问git仓库
+  在git仓库的setting里面修改action的权限
